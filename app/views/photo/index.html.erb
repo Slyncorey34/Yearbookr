@@ -1,0 +1,25 @@
+<h1>Photo Gallery</h1>
+<h3><%=link_to "Add More Photos", root_path%></h3>
+<table>
+	<thead>
+		<tr>
+			<th>All Photos</th>
+		</tr>
+	</thead>
+		<tbody>
+			<% @photos.each do |photo| %>
+			<tr>
+			<td><%=image_tag photo.avatar.url(:thumb) %></td>
+			</tr>
+			
+			<tr>
+			<td><%=photo.caption%></td>
+			</tr>
+			
+			<tr>
+			<td><%=photo.note%></td>
+			</tr>	
+			
+			<%end%>
+	</tbody>
+</table>
